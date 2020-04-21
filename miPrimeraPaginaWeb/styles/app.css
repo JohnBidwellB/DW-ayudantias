@@ -1,0 +1,163 @@
+.primary {
+  background-color: #20a4f3;
+  color: #fff;
+}
+
+.secondary {
+  background-color: #2ec4b6;
+  color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* display: block; */
+  margin: 0px;
+  padding: 0px;
+  body: 100%;
+  width: 100vw;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.container {
+  padding: 16px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0px;
+  }
+}
+#header {
+  width: 100%;
+  /* height: 64px; */
+  background: rgb(32, 164, 243);
+  /* color: "#fff"; */
+  text-align: center;
+}
+
+#header > ul {
+  margin: 0;
+  padding: 20px 0px;
+  list-style-type: none;
+  font-size: 24px;
+}
+
+.header-list-element {
+  display: inline;
+  color: #000;
+  margin-right: 8px;
+  padding: 20px 8px;
+  border-radius: 8px;
+}
+
+.header-list-element:hover {
+  background-color: rgba(0, 56, 88, 0.753);
+}
+
+.header-list-element > a {
+  color: #000;
+  text-decoration: none;
+}
+.header-link:visited {
+  color: #000;
+}
+.header-link:hover {
+  color: #fff;
+}
+.header-link:visited {
+  color: #000;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.column {
+  float: left;
+  width: calc(33.33% - 16px);
+  margin: 0px 8px;
+  /* padding: 10px; */
+  /* background-color: yellow; */
+}
+
+.column:first-child {
+  /* background-color: green; */
+  margin-left: 0px;
+  margin-right: 8px;
+}
+.column:last-child {
+  /* background-color: green; */
+  margin-right: 0px;
+  margin-left: 8px;
+}
+/* .column */
+
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+    margin: 8px 0px;
+  }
+
+  .column:first-child {
+    /* background-color: green; */
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .column:last-child {
+    /* background-color: green; */
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+.content {
+  padding: 16px;
+}
+.image {
+  width: 100%;
+}
+
+.bg-img {
+  background-image: url("/miPrimeraPaginaWeb/bg.jpg");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 80vh;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  overflow-y: hidden;
+}
+
+.section {
+  padding: 20vh 20px;
+  min-height: 40vh;
+}
+
+h1.section-title {
+  text-align: center;
+}
+
+.span {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+}
