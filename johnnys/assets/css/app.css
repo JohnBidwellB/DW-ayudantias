@@ -1,0 +1,30 @@
+.carousel-item {
+  height: 70vh;
+}
+
+.carousel-item img {
+  height: 70vh;
+}
+
+.location-map {
+  width: 100%;
+  height: 300px;
+}
+
+.information-title {
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.information-icon {
+    font-size: 30px;
+    color: blue;
+}
+.social-icon {
+    font-size: 48px;
+    color: black;
+}
+
+#footer {
+    background-color: cornflowerblue;
+}
