@@ -10,7 +10,7 @@ function createProduct()
     $db = $client->johnnys;
     $productsDB = $db->products;
     $products = $productsDB;
-    
+
     // Obtiene las variables desde el formulario
     $name = $_POST["name"];
     $description = $_POST["description"];
