@@ -18,54 +18,48 @@
 <body>
     <?php include_once(realpath(__DIR__ . "/../header.php")) ?>
     <?php include_once(realpath(__DIR__ . "/../productsController.php")) ?>
+    <?php include_once(realpath(__DIR__ . "/../actions/products/updateProduct.php")) ?>
     <?php
     $controller = new ProductsController;
-    $id = $_GET["_id"];
+    $id = $_GET["id"];
     $product = $controller->findOne($id);
+    if (isset($_POST["updateProduct"])) {
+        updateProduct();
+    }
     ?>
 
     <div class="container my-5">
-        <div class="row">
-            <div class="col-xs-12 col-md">
-                <figure class="figure">
-                    <img src="https://picsum.photos/id/1080/600/400" class="figure-img img-fluid rounded" alt="...">
-                </figure>
-            </div>
-
-            <div class="col-xs-12 col-md">
-                <div class="row">
-                    <h3> <?php echo $product["name"] ?></h3>
-                </div>
-                <div class="row">
-                    <p>$<?php echo $product["price"] ?></p>
-                </div>
-                <div class="row">
-                    <p> <?php echo $product["description"] ?></p>
-                </div>
-                <div class="row">
-                    <p>Quedan <?php echo $product["stock"] ?></p>
-                </div>
-                <div class="row">
-                    <div class="d-flex justify-content-end">
-                        <a href="#" class="card-link text-center">
-                            <span style="font-size: 16px;">
-                                <i class="fas fa-cart-plus"></i>
-                            </span> Añadir al carrito</a>
-                        </a></div>
-                </div>
-                <div class="row justify-content-end">
-                    <div style="margin-right: 8px;">
-                        <a href="update.php?id=<?php echo $id ?>" class="text-decoration-none">
-                            <span><i class="far fa-edit"></i></span> Actualizar</a></div>
-                    <div></div>
-                    <div>
-                        <a href="../actions/products/deleteProduct.php?id=<?php echo $id ?>" class="text-decoration-none">
-                            <span><i class="far fa-trash-alt"></i></span> Eliminar</a></div>
-                    <div></div>
-                </div>
-            </div>
+        <div class="row justify-content-center">
+            <h3>Actualizar producto</h3>
         </div>
+        <form method="post">
+            <input type="hidden" value="<?php echo $product["_id"] ?>" name="_id">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input value="<?php echo $product["name"] ?>" required type="text" class="form-control" id="name" name="name" placeholder="Hamburguesa">
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea value="<?php echo $product["description"] ?>" required class="form-control" id="description" name="description" rows="4">/Lorem ipsum dolor sit ammit</textarea>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="price">Precio</label>
+                        <input value="<?php echo $product["price"] ?>" required type="number" class="form-control" id="price" name="price" min=0></input>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="stock">Stock</label>
+                        <input value="<?php echo $product["stock"] ?>" required type="number" class="form-control" id="stock" name="stock" min=0></input>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" name="updateProduct" value="Actualizar">
+        </form>
     </div>
+
 
 
     <?php include_once(realpath(__DIR__ . "/../footer.php")) ?>

@@ -58,6 +58,21 @@
                             </span> Añadir al carrito</a>
                         </a></div>
                 </div>
+                <div class="row justify-content-end">
+                    <div>
+                        <a href="update.php?id=<?php echo $id ?>" class="text-decoration-none">
+                            <span>
+                                <i class="far fa-edit"></i> Actualizar</span>
+                        </a>
+                    </div>
+                    <div style="margin-left: 16px;">
+                        <a href="../actions/products/deleteProduct.php?id=<?php echo $id ?>" class="text-decoration-none">
+                            <span>
+                                <i class="far fa-trash-alt"></i> Eliminar</span>
+                        </a>
+                    </div>
+
+                </div>
             </div>
 
 
